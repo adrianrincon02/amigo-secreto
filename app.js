@@ -11,13 +11,18 @@ function agregarAmigo(){
         amigos.push(amigo);
         document.getElementById("amigo").value = '';
         imprimirLista();
-        amigos = [];
     }
     document.getElementById('amigo').focus();
 }
 
 function imprimirLista() {
+    let lista = document.getElementById("listaAmigos");
+    lista.innerHTML='';
     for (let nombre of amigos) {
-        console.log(nombre);
+        let li = document.createElement("li");
+        li.innerHTML = nombre;
+
+        lista.appendChild(li);
     }
 }
+
