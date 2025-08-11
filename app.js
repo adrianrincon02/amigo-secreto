@@ -6,10 +6,18 @@ let amigo ='';
 function agregarAmigo(){
     amigo = document.getElementById("amigo").value;
     if (amigo == ''){
-        alert ('Por favor ingresar un noombre valido.');
+        alert ('Por favor ingresar un nombre valido.');
     }else {
         amigos.push(amigo);
         document.getElementById("amigo").value = '';
+        imprimirLista();
+        amigos = [];
     }
     document.getElementById('amigo').focus();
+}
+
+function imprimirLista() {
+    for (let nombre of amigos) {
+        console.log(nombre);
+    }
 }
